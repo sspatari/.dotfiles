@@ -1,0 +1,83 @@
+env:
+  TERM: xterm-256color
+window:
+  dimensions:
+    columns: 120
+    lines: 36
+  padding:
+    x: 2
+    y: 2
+  decorations: full
+  dynamic_title: true
+scrolling:
+  history: 10000
+  multiplier: 3
+background_opacity: 1.0
+
+# Font Customization
+font:
+  normal:
+    family: MesloLGS NF
+    style: Regular
+  bold:
+    family: MesloLGS NF
+    style: Bold
+  italic:
+    family: MesloLGS NF
+    style: Italic
+  size: 12
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+  debug:
+    persistent_logging: false
+draw_bold_text_with_bright_colors: true
+
+#shell:
+#  program: /bin/zsh
+#  args:
+#    - -l
+#    - -c
+#    - "tmux"
+
+# Colors (iTerm 2 default theme)
+colors:
+  # Default colors
+  primary:
+    background: '#101421'
+    foreground: '#fffbf6'
+
+ # Normal colors
+  normal:
+    black:   '#2e2e2e'
+    red:     '#eb4129'
+    green:   '#abe047'
+    yellow:  '#f6c744'
+    blue:    '#47a0f3'
+    magenta: '#7b5cb0'
+    cyan:    '#64dbed'
+    white:   '#e5e9f0'
+
+ # Bright colors
+  bright:
+    black:   '#565656'
+    red:     '#ec5357'
+    green:   '#c0e17d'
+    yellow:  '#f9da6a'
+    blue:    '#49a4f8'
+    magenta: '#a47de9'
+    cyan:    '#99faf2'
+    white:   '#ffffff'
+
+  selection:
+    text: '0xffffff'
+    background: '0xdc3232'
+    white:   '0xffffff'
+
+cursor:
+  style: Block
+  unfocused_hollow: true
