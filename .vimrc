@@ -1,11 +1,33 @@
-set backspace=2         " backspace in insert mode works like normal editor
-set shiftwidth=2        " indent by 2 spaces when auto-indenting
-set softtabstop=2       " indent by 2 spaces when hitting tab
-syntax on               " syntax highlighting
-filetype indent on      " activates indenting for files
-set autoindent          " auto indenting
-set number              " line numbers
-set relativenumber	" turn on relative line number
-colorscheme desert      " colorscheme desert
-set nobackup            " get rid of anoying ~file
-set clipboard=unnamed   " System clipboard sharing
+syntax on
+filetype plugin indent on
+
+set background=dark
+set tabstop=4 softtabstop=4
+set shiftwidth=4
+set expandtab
+set smartindent
+set number
+set relativenumber
+set noerrorbells
+set vb t_vb=
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+set incsearch
+set scrolloff=8
+set colorcolumn=80
+set signcolumn=yes
+set updatetime=2000
+set clipboard=unnamed
+
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
+call plug#begin()
+Plug 'morhetz/gruvbox'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+colorscheme gruvbox
+
