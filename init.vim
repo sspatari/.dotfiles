@@ -32,6 +32,7 @@ set wildignore+=**/node_modules/*
 set wildignore+=**/android/*
 set wildignore+=**/ios/*
 set wildignore+=**/.git/*
+set termguicolors
 
 call plug#begin(stdpath('data') . '/plugged')
     Plug 'morhetz/gruvbox'
