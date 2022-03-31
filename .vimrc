@@ -30,4 +30,3 @@ Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 colorscheme gruvbox
-
