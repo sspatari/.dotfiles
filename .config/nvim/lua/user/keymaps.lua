@@ -31,5 +31,3 @@ keymap("v", "p", '"_dP', opts)
 -- Move text up and down
 keymap("i", "<C-j>", "<ESC>:m .+1<CR>==gi", opts)
 keymap("i", "<C-k>", "<ESC>:m .-2<CR>==gi", opts)
-
-
