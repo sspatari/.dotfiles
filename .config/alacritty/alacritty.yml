@@ -84,3 +84,8 @@ cursor:
     blinking: Always
   blink_interval: 500
   unfocused_hollow: true
+
+key_bindings:
+  - { key: Right, mods: Alt, chars: "\x1BF" } # move one word right
+  - { key: Left,  mods: Alt, chars: "\x1BB" } # move one word left
+
