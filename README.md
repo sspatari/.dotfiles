@@ -39,12 +39,12 @@ So, the backup repository can be operated with ```git --git-dir=$HOME/.dotfiles 
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME status
 ```
 
-Alias this mouthful command to ```dotfiles-git``` to use with ease.
+Alias this mouthful command to ```git-dotfiles``` to use with ease.
 
 ```zsh
 # Notice the --bare flag; this initializes the repository as a git bare
 git init --bare $HOME/.dotfiles
-alias dotfiles-git="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias git-dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 ```
 
 That was all for the setup, just one tiny flag, and one alias. Simple enough? There is no need to install anything, no chances of running into installation/build issues, or any other issues.
@@ -57,24 +57,24 @@ Example - Adding a file (```.vimrc``` in this example) for tracking.
 
 ```zsh
 #  Notice, add and commit are done together. Feel free to use separate commands for the same.
-dotfiles-git commit .vimrc -m ".vimrc added."
+git-dotfiles commit .vimrc -m ".vimrc added."
 
 # Push new changes to GitHub, Bitbucket, Gitlab, or anywhere else.
-dotfiles-git push origin main
+git-dotfiles push origin main
 ```
 
 Example - To check the state of the dotfiles repo.
 
 ```zsh
 # to check the status of the tracked and untracked files
-dotfiles-git status
+git-dotfiles status
 ```
 
 The output of the above status command may contain all the home directory files. It is normal Git behavior to show all the untracked files in the directory. The fix for this is relatively simple, by updating the `git config` for the dotfiles repo.
 
 ```zsh
 # Hides all the untracked files in the output
-dotfiles-git config --local status.showUntrackedFiles no
+git-dotfiles config --local status.showUntrackedFiles no
 ```
 
 With this done, managing dotfiles is good to go. The simplicity of tracking dotfiles, versioning, and managing is remarkable with Git.
@@ -96,10 +96,10 @@ If breaking things is a ritual, Git promotes experimenting with new configuratio
 
 ```zsh
 # To check the version history
-dotfiles-git log
+git-dotfiles log
 
 # To checkout to last working version
-dotfiles-git reset <commit-hash> --hard/soft
+git-dotfiles reset <commit-hash> --hard/soft
 ```
 
 ### Access across multiple devices
