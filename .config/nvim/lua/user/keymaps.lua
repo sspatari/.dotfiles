@@ -18,16 +18,16 @@ keymap("v", ">", ">gv", opts)
 
 -- Normal mode --
 -- Move text up and down
-keymap("n", "<C-j>", ":m .+1<CR>==", opts)
-keymap("n", "<C-k>", ":m .-2<CR>==", opts)
+keymap("n", "∆", ":m .+1<CR>==", opts) -- "<M-j>"
+keymap("n", "˚", ":m .-2<CR>==", opts) -- "<M-j>"
 
 -- Visual mode --
 -- Move text up and down
-keymap("v", "<C-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("v", "<C-k>", ":move '<-2<CR>gv-gv", opts)
+keymap("v", "∆", ":move '>+1<CR>gv-gv", opts) -- "<M-j>"
+keymap("v", "˚", ":move '<-2<CR>gv-gv", opts) -- "<M-k>"
 keymap("v", "p", '"_dP', opts)
 
 -- Insert mode --
 -- Move text up and down
-keymap("i", "<C-j>", "<ESC>:m .+1<CR>==gi", opts)
-keymap("i", "<C-k>", "<ESC>:m .-2<CR>==gi", opts)
+keymap("i", "∆", "<ESC>:m .+1<CR>==gi", opts) -- "<M-j>"
+keymap("i", "˚", "<ESC>:m .-2<CR>==gi", opts) -- "<M-k>"
