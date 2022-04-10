@@ -25,6 +25,9 @@ font:
   italic:
     family: MesloLGS NF
     style: Italic
+  bold_italic:
+    family: MesloLGS NF
+    style: Bold Italic
   size: 12
   offset:
     x: 0
