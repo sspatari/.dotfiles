@@ -4,12 +4,12 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+keymap("", ";", "<Nop>", opts)
+vim.g.mapleader = ";"
+vim.g.maplocalleader = ";"
 
 -- Open explorer
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+keymap("n", "<leader>e", ":Lex 30<CR>", opts)
 
 -- Visual mode --
 -- Stay in indent mode
@@ -32,6 +32,12 @@ keymap("v", "p", '"_dP', opts)
 keymap("i", "∆", "<ESC>:m .+1<CR>==gi", opts) -- "<M-j>"
 keymap("i", "˚", "<ESC>:m .-2<CR>==gi", opts) -- "<M-k>"
 
-keymap("n", "<Leader>p", "<cmd>Telescope find_files<cr>", opts)
--- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<Leader>f", "<cmd>Telescope live_grep<cr>", opts)
+-- Telescope
+keymap("n", "<Leader>f", ":Telescope find_files hidden=true<CR>", opts)
+keymap("n", "<Leader>g", ":Telescope live_grep<CR>", opts)
+keymap("n", "<Leader>s", ":Telescope grep_string<CR>", opts)
+keymap("n", "<Leader>;", ":Telescope git_files<CR>", opts)
+keymap("n", "<Leader>b", ":Telescope buffers<CR>", opts)
+keymap("n", "<Leader>a", ":Telescope lsp_code_actions<CR>", opts)
+keymap("n", "<Leader>d", ":Telescope diagnostics<CR>", opts)
+

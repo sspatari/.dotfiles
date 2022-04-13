@@ -70,6 +70,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
