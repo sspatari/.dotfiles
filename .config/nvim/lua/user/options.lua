@@ -33,7 +33,6 @@ local options = {
   wrap = true,                             -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,                       -- minimum number of screen columns to keep to the left and to the right of the cursor if 'nowrap' is set
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append "c"

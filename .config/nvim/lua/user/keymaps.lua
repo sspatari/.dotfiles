@@ -8,8 +8,8 @@ keymap("", ";", "<Nop>", opts)
 vim.g.mapleader = ";"
 vim.g.maplocalleader = ";"
 
--- Open explorer
-keymap("n", "<leader>e", ":Lex 30<CR>", opts)
+-- Nvim tree
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Visual mode --
 -- Stay in indent mode
