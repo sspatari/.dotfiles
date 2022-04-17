@@ -17,16 +17,16 @@ scrolling:
 # Font Customization
 font:
   normal:
-    family: MesloLGS NF
+    family: Hack Nerd Font Mono
     style: Regular
   bold:
-    family: MesloLGS NF
+    family: Hack Nerd Font Mono
     style: Bold
   italic:
-    family: MesloLGS NF
+    family: Hack Nerd Font Mono
     style: Italic
   bold_italic:
-    family: MesloLGS NF
+    family: Hack Nerd Font Mono
     style: Bold Italic
   size: 12
   offset:
