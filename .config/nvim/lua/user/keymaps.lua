@@ -33,7 +33,7 @@ keymap("i", "∆", "<ESC>:m .+1<CR>==gi", opts) -- "<M-j>"
 keymap("i", "˚", "<ESC>:m .-2<CR>==gi", opts) -- "<M-k>"
 
 -- Telescope
-keymap("n", "<Leader>f", ":Telescope find_files hidden=true<CR>", opts)
+keymap("n", "<Leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<Leader>g", ":Telescope live_grep<CR>", opts)
 keymap("n", "<Leader>s", ":Telescope grep_string<CR>", opts)
 keymap("n", "<Leader>;", ":Telescope git_files<CR>", opts)
