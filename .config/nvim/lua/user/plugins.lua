@@ -101,9 +101,6 @@ return packer.startup({
 		use("windwp/nvim-autopairs")
 		use("windwp/nvim-spectre") -- Spectre for find and replace
 
-		-- Formatting
-		use("mhartington/formatter.nvim")
-
 		use("airblade/vim-gitgutter")
 
 		-- hightlight matching tag in html,jsx etc.
