@@ -64,14 +64,15 @@ wk.register({
   f = {
     -- mostly Telescope bindings
     name = "Find with Telescope",
-    f = { [[<cmd> lua require"telescope.builtin".find_files()<CR>]], "Find File" },
-    b = { ":Telescope buffers<cr>", "Find Buffer" },
-    n = { ":TodoTelescope<cr>", "Find Notes" },
-    t = { ":Telescope builtin<cr>", "Telescope builtin" },
-    s = { ":Telescope live_grep<cr>", "Search In Files" },
-    c = { ":Telescope lsp_code_actions<cr>", "Code Actions" },
-    r = { ":Telescope lsp_references<cr>", "Find References" },
-    d = { ":Telescope diagnostics<cr>", "Document Diagnostics" },
+    f = { ":Telescope find_files<CR>", "Find File" },
+    b = { ":Telescope buffers<CR>", "Find Buffer" },
+    n = { ":TodoTelescope<CR>", "Find Notes" },
+    t = { ":Telescope builtin<CR>", "Telescope builtin" },
+    s = { ":Telescope live_grep<CR>", "Search In Files" },
+    w = { ":Telescope grep_string<CR>", "Search word under cursor" },
+    c = { ":Telescope lsp_code_actions<CR>", "Code Actions" },
+    r = { ":Telescope lsp_references<CR>", "Find References" },
+    d = { ":Telescope diagnostics<CR>", "Document Diagnostics" },
     m = { ":Telescope marks<CR>", "Marks" },
     k = { ":Telescope keymaps<CR>", "Key mappings" },
     M = { ":Telescope man_pages<CR>", "Man pages" },
@@ -98,7 +99,7 @@ wk.register({
   c = { ":CodeActionMenu<CR>", "Code Actions" },
   d = { "<cmd>lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" },
   w = { ":WhichKey<CR>", "WhichKey" },
-  s = { ":lua vim.o.spell = not vim.o.spell<cr>", "Toggle spell check" },
+  s = { ":lua vim.o.spell = not vim.o.spell<CR>", "Toggle spell check" },
   r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
   -- Bufferline
   b = {
