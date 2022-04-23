@@ -1,51 +1,39 @@
-vim.opt.relativenumber = true
-vim.opt.cursorline = true -- show the cursor line
-vim.opt.hidden = true
-vim.opt.cursorcolumn = true -- show the cursor column
-vim.opt.mouse = "a" -- enable mouse
-vim.opt.clipboard = "unnamedplus" -- use system clipboard
-vim.opt.smartcase = true -- ignores case for search unless a capital is used in search
-vim.opt.splitbelow = true -- force all horizontal splits to go below current window
-vim.opt.splitright = true -- force all vertical splits to go to the right of current window
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true -- spaces instead of tabs
-vim.opt.number = true
-vim.opt.wrap = true
-vim.opt.textwidth = 80
-vim.opt.linebreak = true
-vim.opt.scrolloff = 10
-vim.opt.incsearch = true
-vim.opt.cmdheight = 2
-vim.opt.showmode = false -- use lualine status instead
-vim.opt.numberwidth = 5 -- wider gutter
-vim.opt.linebreak = true -- don't break words on wrap
-vim.opt.spelllang = "en"
-vim.opt.smartindent = true
-vim.opt.completeopt = "menuone,noselect" -- nvim-cmp
--- vim.opt.completeopt = {"menuone", "longest", "preview"}
-vim.opt.signcolumn = "yes" -- always show the signcolumn
-vim.opt.termguicolors = true
--- vim.opt.title = true
--- spelling
--- vim.opt.spell = true
-vim.opt.spelllang = "en_gb"
-vim.opt.mousemodel = "popup"
--- timeout for whichkey
-vim.opt.timeoutlen = 500
+-- :help options
+local options = {
+  number = true,
+  relativenumber = true,
+  cursorline = true, -- show the cursor line
+  hidden = true,
+  cursorcolumn = true, -- show the cursor column
+  mouse = "a", -- enable mouse
+  clipboard = "unnamedplus", -- use system clipboard
+  smartindent = true,
+  splitbelow = true, -- force all horizontal splits to go below current window
+  splitright = true, -- force all vertical splits to go to the right of current window
+  tabstop = 2, -- insert 2 spaces for a tab
+  shiftwidth = 2, -- the number of spaces inserted for each indentation
+  expandtab = true, -- spaces instead of tabs
+  pumheight = 10, -- pop up menu height
+  wrap = true,
+  textwidth = 80,
+  scrolloff = 10,
+  incsearch = true,
+  cmdheight = 2,
+  showmode = false, -- use lualine status instead
+  numberwidth = 5, -- wider gutter
+  linebreak = true, -- don't break words on wrap
+  completeopt = "menuone,noselect", -- nvim-cmp
+  signcolumn = "yes", -- always show the signcolumn
+  termguicolors = true,
+  spelllang = "en_gb",
+  mousemodel = "popup",
+  -- timeout for whichkey
+  timeoutlen = 500,
+}
 
--- vim.opt.foldmethod = "indent"
--- vim.opt.foldlevelstart = 2
--- vim.opt.foldnestmax = 2
-
--- Neovide settings
-vim.o.guifont = "Victor Mono Nerd Font:h11"
--- vim.opt.guifontsize = 11
-vim.g.neovide_transparency = 0.9
-vim.g.neovide_fullscreen = true
-
-vim.g.netrw_banner = 0
-vim.g.netrw_liststyle = 3
+for k, v in pairs(options) do
+  vim.opt[k] = v
+end
 
 vim.g.mapleader = " "
 
