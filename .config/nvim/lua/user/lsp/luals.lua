@@ -22,7 +22,13 @@ require("lspconfig").sumneko_lua.setup({
       },
       workspace = {
         -- Make the server aware of Neovim runtime files
-        library = vim.api.nvim_get_runtime_file("", true),
+        -- For some reason havin setting this line below as the docs suggest
+        -- open a quick-fix window every time you jump to a reference
+        -- library = vim.api.nvim_get_runtime_file("", true),
+        library = {
+          [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+          [vim.fn.stdpath("config") .. "/lua"] = true,
+        },
       },
       -- Do not send telemetry data containing a randomized but unique identifier
       telemetry = {

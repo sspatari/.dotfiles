@@ -29,6 +29,7 @@ local options = {
   mousemodel = "popup",
   -- timeout for whichkey
   timeoutlen = 500,
+  undofile = true, -- enable persistent undo
 }
 
 for k, v in pairs(options) do
