@@ -1,4 +1,7 @@
-local wk = require("which-key")
+local status_ok, wk = pcall(require, "which-key")
+if not status_ok then
+  return
+end
 
 wk.setup({
   plugins = {
@@ -72,7 +75,6 @@ wk.register({
     m = { ":Telescope marks<CR>", "Marks" },
     k = { ":Telescope keymaps<CR>", "Key mappings" },
     M = { ":Telescope man_pages<CR>", "Man pages" },
-    a = { ":Telescope session-lens search_session<CR>", "Search Sessions" },
   },
   h = {
     name = "Git Gutter",
@@ -119,13 +121,6 @@ wk.register({
     r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
     R = { "<cmd> lua vim.lsp.buf.references()<CR>", "List references" },
     c = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code actions" },
-  },
-  a = {
-    name = "Auto Sessions",
-    S = { ":SaveSession<cr>", "Save session" },
-    s = { ":SearchSession<cr>", "Search sessions" },
-    d = { ":DeleteSession<cr>", "Delete session" },
-    r = { ":RestoreSession<cr>", "Restore session" },
   },
 }, {
   prefix = "<leader>",

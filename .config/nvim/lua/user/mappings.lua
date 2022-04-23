@@ -12,18 +12,14 @@ end
 
 local mappings = {
   i = {
-    -- Insert mode
-    { "kk", "<ESC>" },
-    { "jj", "<ESC>" },
-    { "jk", "<ESC>" },
     -- Terminal window navigation
     { "<C-h>", "<C-\\><C-N><C-w>h" },
     { "<C-j>", "<C-\\><C-N><C-w>j" },
-    { "<C-k>", "<C-\\><C-N><C-w>k" },
     { "<C-l>", "<C-\\><C-N><C-w>l" },
+    { "<C-k>", "<C-\\><C-N><C-w>k" },
     -- moving text
-    { "<C-j>", "<esc>:m .+1<CR>==" },
-    { "<C-k>", "<esc>:m .-2<CR>==" },
+    { "∆", "<ESC>:m .+1<CR>==gi" }, -- <Option-j>
+    { "˚", "<ESC>:m .-2<CR>==gi" }, -- <Option-k>
   },
   n = {
     -- Normal mode
@@ -40,7 +36,7 @@ local mappings = {
     -- Ctrl + p fuzzy files
     { "<C-p>", [[<cmd> lua require"telescope.builtin".find_files()<CR>]] },
     -- escape clears highlighting
-    { "<esc>", ":noh<CR><esc>" },
+    { "<ESC>", ":noh<CR><ESC>" },
     -- hop words
     { "f", ":HopWord<CR>" },
     { "F", ":HopLine<CR>" },
@@ -77,8 +73,8 @@ local mappings = {
     -- hop words
     { "f", "<cmd>lua require'hop'.hint_words()<CR>" },
     -- moving text
-    { "J", ":m '>+1<CR>gv=gv" },
-    { "K", ":m '<-2<CR>gv=gv" },
+    { "∆", ":m '>+1<CR>gv=gv" }, -- <Option-j>
+    { "˚", ":m '<-2<CR>gv=gv" }, -- <Option-k>
   },
   x = {},
 }

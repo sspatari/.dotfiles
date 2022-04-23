@@ -1,5 +1,5 @@
-local lspkind_status_ok, lspkind = pcall(require, "lspkind")
-if not lspkind_status_ok then
+local status_ok, lspkind = pcall(require, "lspkind")
+if not status_ok then
   return
 end
 
