@@ -10,7 +10,6 @@ require("user.lsp.json")
 require("user.lsp.tailwind")
 require("user.lsp.yaml")
 require("user.lsp.prisma")
-require("user.lsp.emmet")
 require("user.lsp.gql")
 require("user.lsp.rust")
 

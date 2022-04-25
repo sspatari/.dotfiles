@@ -1,17 +1,8 @@
--- JavaScript and TypeScript -------------------------------
+local on_attach = function(client)
+  client.resolved_capabilities.document_formatting = false
+  client.resolved_capabilities.document_range_formatting = false
+end
 
 require("lspconfig").tsserver.setup({
-  filetypes = {
-    "javascript",
-    "javascriptreact",
-    "javascript.jsx",
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx",
-  },
-  cmd = { "typescript-language-server", "--stdio" },
-  -- I needed this to work on plain .js files
-  root_dir = function()
-    return vim.loop.cwd()
-  end,
+  on_attach = on_attach
 })

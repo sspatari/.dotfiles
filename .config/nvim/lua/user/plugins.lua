@@ -127,9 +127,6 @@ return packer.startup({
       requires = "nvim-lua/plenary.nvim",
     })
 
-    -- jsonc file type for json - comments in json
-    use("kevinoid/vim-jsonc")
-
     -- bufferline for buffers in 'tabs'
     use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
 
