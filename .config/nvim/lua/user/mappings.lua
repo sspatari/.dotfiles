@@ -36,8 +36,8 @@ local mappings = {
     -- escape clears highlighting
     { "<ESC>", ":noh<CR><ESC>" },
     -- hop words
-    { "f", ":HopWord<CR>" },
-    { "F", ":HopLine<CR>" },
+    { "s", ":HopWord<CR>" },
+    { "S", ":HopLine<CR>" },
     -- yank to end of line on Y
     { "Y", "y$" },
     -- lsp mappings
@@ -48,6 +48,7 @@ local mappings = {
     { "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>" },
     { "gd", "<CMD>lua vim.lsp.buf.definition()<CR>" },
     { "gr", "<CMD>lua vim.lsp.buf.references()<CR>" },
+    { "gi", "<CMD>lua vim.lsp.buf.implementation()<CR>" },
     -- bufferline
     { "H", ":BufferLineCyclePrev<CR>" },
     { "L", ":BufferLineCycleNext<CR>" },
@@ -69,7 +70,7 @@ local mappings = {
     { "<", "<gv" },
     { ">", ">gv" },
     -- hop words
-    { "f", "<CMD>lua require'hop'.hint_words()<CR>" },
+    { "s", "<CMD>lua require'hop'.hint_words()<CR>" },
     -- moving text
     { "∆", ":m '>+1<CR>gv=gv" }, -- <Option-j>
     { "˚", ":m '<-2<CR>gv=gv" }, -- <Option-k>
@@ -79,13 +80,10 @@ local mappings = {
 
 register_mappings(mappings, { silent = true, noremap = true })
 
--- S for search and replace in buffer
-vim.cmd("nnoremap S :%s/")
-
 -- hop in motion
 local actions = { "d", "c", "<", ">", "y" }
 for _, a in ipairs(actions) do
-  vim.api.nvim_set_keymap("n", a .. "f", a .. "<CMD>lua require'hop'.hint_char1()<CR>", {})
+  vim.api.nvim_set_keymap("n", a .. "s", a .. "<CMD>lua require'hop'.hint_char1()<CR>", {})
 end
 
 vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
