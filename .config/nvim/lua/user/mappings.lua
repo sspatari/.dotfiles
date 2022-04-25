@@ -33,8 +33,6 @@ local mappings = {
     { "<C-Down>", ":resize +2<CR>", { silent = true } },
     { "<C-Left>", ":vertical resize -2<CR>", { silent = true } },
     { "<C-Right>", ":vertical resize +2<CR>", { silent = true } },
-    -- Ctrl + p fuzzy files
-    { "<C-p>", [[<cmd> lua require"telescope.builtin".find_files()<CR>]] },
     -- escape clears highlighting
     { "<ESC>", ":noh<CR><ESC>" },
     -- hop words
@@ -43,13 +41,13 @@ local mappings = {
     -- yank to end of line on Y
     { "Y", "y$" },
     -- lsp mappings
-    { "K", "<Cmd>lua vim.lsp.buf.hover()<CR>" },
-    { "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>" },
-    { "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>" },
-    { "]d", "<cmd>lua vim.lsp.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>" },
-    { "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>" },
-    { "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>" },
-    { "gr", "<Cmd>lua vim.lsp.buf.references()<CR>" },
+    { "K", "<CMD>lua vim.lsp.buf.hover()<CR>" },
+    { "<C-k>", "<CMD>lua vim.lsp.buf.signature_help()<CR>" },
+    { "[d", "<CMD>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>" },
+    { "]d", "<CMD>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>" },
+    { "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>" },
+    { "gd", "<CMD>lua vim.lsp.buf.definition()<CR>" },
+    { "gr", "<CMD>lua vim.lsp.buf.references()<CR>" },
     -- bufferline
     { "H", ":BufferLineCyclePrev<CR>" },
     { "L", ":BufferLineCycleNext<CR>" },
@@ -71,7 +69,7 @@ local mappings = {
     { "<", "<gv" },
     { ">", ">gv" },
     -- hop words
-    { "f", "<cmd>lua require'hop'.hint_words()<CR>" },
+    { "f", "<CMD>lua require'hop'.hint_words()<CR>" },
     -- moving text
     { "∆", ":m '>+1<CR>gv=gv" }, -- <Option-j>
     { "˚", ":m '<-2<CR>gv=gv" }, -- <Option-k>
@@ -87,7 +85,7 @@ vim.cmd("nnoremap S :%s/")
 -- hop in motion
 local actions = { "d", "c", "<", ">", "y" }
 for _, a in ipairs(actions) do
-  vim.api.nvim_set_keymap("n", a .. "f", a .. "<cmd>lua require'hop'.hint_char1()<CR>", {})
+  vim.api.nvim_set_keymap("n", a .. "f", a .. "<CMD>lua require'hop'.hint_char1()<CR>", {})
 end
 
 vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]

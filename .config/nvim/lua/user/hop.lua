@@ -1,6 +1,6 @@
-local hop_status_ok, hop = pcall(require, "hop")
-if not hop_status_ok then
-	return
+local status_ok, hop = pcall(require, "hop")
+if not status_ok then
+  return
 end
 
 hop.setup({ keys = "etovxqpdygfblzhckisuran" })

@@ -110,11 +110,6 @@ wk.register({
     l = { ":BufferLineCloseLeft<CR>", "Close all to left" },
     p = { ":BufferLineTogglePin<CR>", "Toggle pin" },
   },
-  S = {
-    name = "Spectre - find and replace",
-    s = { ":lua require('spectre').open_visual()<CR>", "Open Spectre" },
-    w = { ":lua require('spectre').open_visual({select_word=true})<CR>", "Search for word under cursor" },
-  },
   l = {
     name = "LSP",
     f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format File" },

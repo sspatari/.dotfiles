@@ -96,7 +96,6 @@ return packer.startup({
     -- windwp
     use("windwp/nvim-ts-autotag") -- auto close and rename tags
     use("windwp/nvim-autopairs")
-    use("windwp/nvim-spectre") -- Spectre for find and replace
 
     use("airblade/vim-gitgutter")
 
