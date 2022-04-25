@@ -118,15 +118,6 @@ return packer.startup({
     -- Theme
     use("folke/tokyonight.nvim")
 
-    -- Trouble
-    use({
-      "folke/trouble.nvim",
-      requires = "kyazdani42/nvim-web-devicons",
-      config = function()
-        require("trouble").setup({})
-      end,
-    })
-
     -- WhichKey
     use("folke/which-key.nvim")
 

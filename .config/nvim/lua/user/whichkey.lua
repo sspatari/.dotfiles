@@ -84,17 +84,6 @@ wk.register({
     u = "Undo Changes",
   },
   e = { ":NvimTreeToggle<CR>", "File Tree" },
-  -- trouble bindings
-  t = {
-    name = "Trouble",
-    t = { ":TroubleToggle<CR>", "Toggle" },
-    r = { ":Trouble lsp_references<CR>", "References" },
-    d = { ":Trouble lsp_definitions<CR>", "Definitions" },
-    q = { ":Trouble quickfix<CR>", "Quickfix" },
-    T = { ":TodoTrouble<CR>", "Todos" },
-    w = { ":Trouble workspace_diagnostics<CR>", "Workspace Diagnostics" },
-    D = { ":Trouble document_diagnostics<CR>", "Document Diagnostics" },
-  },
   T = { ":TodoLocList<CR>", "Todos list" },
   c = { ":CodeActionMenu<CR>", "Code Actions" },
   d = { "<cmd>lua vim.diagnostic.open_float({ border = 'rounded' })<CR>", "Line Diagnostics" },
