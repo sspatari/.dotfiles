@@ -42,6 +42,10 @@ return packer.startup({
   function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
+    use("tpope/vim-surround") -- All about surroundings
+
+    -- Colorschemes
+    use("folke/tokyonight.nvim")
 
     -- LSP
     use("neovim/nvim-lspconfig")
@@ -85,9 +89,9 @@ return packer.startup({
       },
     })
 
-    -- tpope
+    -- Git
     use("tpope/vim-fugitive")
-    use("tpope/vim-surround")
+    use "lewis6991/gitsigns.nvim"
 
     -- Commenting
     use("JoosepAlviste/nvim-ts-context-commentstring")
@@ -97,7 +101,6 @@ return packer.startup({
     use("windwp/nvim-ts-autotag") -- auto close and rename tags
     use("windwp/nvim-autopairs")
 
-    use("airblade/vim-gitgutter")
 
     -- hightlight matching tag in html,jsx etc.
     use("leafOfTree/vim-matchtag")
@@ -113,10 +116,6 @@ return packer.startup({
 
     -- icons in completion
     use("onsails/lspkind-nvim")
-
-    -- Folke plugins
-    -- Theme
-    use("folke/tokyonight.nvim")
 
     -- WhichKey
     use("folke/which-key.nvim")
