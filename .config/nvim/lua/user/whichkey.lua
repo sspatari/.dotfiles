@@ -91,15 +91,6 @@ wk.register({
   w = { ":WhichKey<CR>", "WhichKey" },
   s = { ":lua vim.o.spell = not vim.o.spell<CR>", "Toggle spell check" },
   r = { ":lua vim.lsp.buf.rename()<CR>", "Rename" },
-  -- Bufferline
-  b = {
-    name = "Bufferline",
-    b = { ":BufferLinePick<CR>", "Pick" },
-    q = { ":BufferLinePickClose<CR>", "Pick to close" },
-    r = { ":BufferLineCloseRight<CR>", "Close all to right" },
-    l = { ":BufferLineCloseLeft<CR>", "Close all to left" },
-    p = { ":BufferLineTogglePin<CR>", "Toggle pin" },
-  },
   l = {
     name = "LSP",
     f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format File" },
