@@ -76,6 +76,7 @@ wk.register({
     m = { ":Telescope marks<CR>", "Marks" },
     k = { ":Telescope keymaps<CR>", "Key mappings" },
     M = { ":Telescope man_pages<CR>", "Man pages" },
+    g = { ":Telescope git_files<CR>", "Find Git Files" },
   },
   h = {
     name = "Git Gutter",
