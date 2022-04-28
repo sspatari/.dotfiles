@@ -48,7 +48,8 @@ return packer.startup({
     use("folke/tokyonight.nvim")
 
     -- LSP
-    use("neovim/nvim-lspconfig")
+    use("neovim/nvim-lspconfig") -- enable LSP
+    use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
 
     -- Telescope
     use({
