@@ -45,7 +45,7 @@ return packer.startup({
     use("tpope/vim-surround") -- All about surroundings
 
     -- Colorschemes
-    use("folke/tokyonight.nvim")
+    use("Mofiqul/dracula.nvim")
 
     -- LSP
     use("neovim/nvim-lspconfig") -- enable LSP

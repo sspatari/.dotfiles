@@ -20,7 +20,6 @@ local options = {
   incsearch = true,
   cmdheight = 2,
   showmode = false, -- use lualine status instead
-  -- numberwidth = 4, -- wider gutter
   linebreak = true, -- don't break words on wrap
   completeopt = "menuone,noselect", -- nvim-cmp
   signcolumn = "yes", -- always show the signcolumn
