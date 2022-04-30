@@ -17,9 +17,16 @@ telescope.setup({
       "--trim" -- add this value
     },
     layout_strategy = "vertical",
-    file_sorter = require("telescope.sorters").get_fuzzy_file,
-    -- file_ignore_patterns = { ".git/", "node_modules/", "env/" }, -- ignore git
-    generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
-    set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
   },
+  fzf = {
+    fuzzy = true, -- false will only do exact matching
+    override_generic_sorter = true, -- override the generic sorter
+    override_file_sorter = true, -- override the file sorter
+    case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    -- the default case_mode is "smart_case"
+  }
 })
+
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+telescope.load_extension('fzf')
