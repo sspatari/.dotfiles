@@ -3,32 +3,12 @@ if not status_ok then
   return
 end
 
---lualine settings
 lualine.setup({
-  options = {
-    icons_enabled = true,
-    components_separators = { left = "", right = "" },
-    section_separators = { left = "", right = "" },
-    disabled_filetypes = {},
-    theme = "tokyonight",
-  },
   sections = {
-    lualine_a = { "mode" },
-    lualine_b = { "branch" },
     lualine_c = { { "filename", file_status = true, path = 1 } },
-    -- lualine_x = {"encoding", "fileformat", "filetype"},
-    lualine_x = { "encoding", "filetype" },
-    lualine_y = { "progress" },
-    lualine_z = { "location" },
   },
   inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = { "location" },
-    lualine_y = {},
-    lualine_z = {},
+    lualine_c = { { "filename", file_status = true, path = 1 } },
   },
-  tabline = {},
-  extensions = { "fugitive", "nvim-tree" },
+  extensions = { "fugitive", "nvim-tree" }
 })
