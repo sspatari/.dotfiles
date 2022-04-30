@@ -30,6 +30,8 @@ local options = {
   -- timeout for whichkey
   timeoutlen = 500,
   undofile = true, -- enable persistent undo
+  smartcase = true,
+  ignorecase = true,
 }
 
 for k, v in pairs(options) do
