@@ -51,7 +51,7 @@ nvim_tree.setup({
       },
     },
     number = false,
-    relativenumber = false,
+    relativenumber = true,
   },
   actions = {
     open_file = {
