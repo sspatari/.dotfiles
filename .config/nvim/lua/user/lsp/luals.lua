@@ -1,3 +1,7 @@
+local on_attach = function(client)
+  client.resolved_capabilities.document_formatting = false
+end
+
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
@@ -8,6 +12,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#sumneko_lua
 
 require("lspconfig").sumneko_lua.setup({
+  on_attach = on_attach,
   settings = {
     Lua = {
       runtime = {

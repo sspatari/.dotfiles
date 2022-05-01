@@ -83,5 +83,5 @@ for _, a in ipairs(actions) do
   vim.api.nvim_set_keymap("n", a .. "s", a .. "<CMD>lua require'hop'.hint_char1()<CR>", {})
 end
 
-vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])

@@ -56,7 +56,7 @@ return packer.startup({
       "nvim-telescope/telescope.nvim",
       requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
     })
-    use({ 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' })
+    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
     -- Treesitter
     use({
@@ -94,7 +94,7 @@ return packer.startup({
 
     -- Git
     use("tpope/vim-fugitive")
-    use "lewis6991/gitsigns.nvim"
+    use("lewis6991/gitsigns.nvim")
 
     -- Commenting
     use("JoosepAlviste/nvim-ts-context-commentstring")
@@ -103,7 +103,6 @@ return packer.startup({
     -- windwp
     use("windwp/nvim-ts-autotag") -- auto close and rename tags
     use("windwp/nvim-autopairs")
-
 
     -- hightlight matching tag in html,jsx etc.
     use("leafOfTree/vim-matchtag")

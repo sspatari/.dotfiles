@@ -4,5 +4,5 @@ local on_attach = function(client)
 end
 
 require("lspconfig").tsserver.setup({
-  on_attach = on_attach
+  on_attach = on_attach,
 })

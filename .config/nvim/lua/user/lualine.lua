@@ -10,5 +10,5 @@ lualine.setup({
   inactive_sections = {
     lualine_c = { { "filename", file_status = true, path = 1 } },
   },
-  extensions = { "fugitive", "nvim-tree" }
+  extensions = { "fugitive", "nvim-tree" },
 })
