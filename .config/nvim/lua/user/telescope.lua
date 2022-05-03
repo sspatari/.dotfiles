@@ -4,6 +4,8 @@ if not status_ok then
   return
 end
 
+local actions = require("telescope.actions")
+
 telescope.setup({
   defaults = {
     vimgrep_arguments = {
@@ -17,6 +19,16 @@ telescope.setup({
       "--trim", -- add this value
     },
     layout_strategy = "vertical",
+    mappings = {
+      i = {
+        ["<Tab>"] = actions.move_selection_worse,
+        ["<S-Tab>"] = actions.move_selection_better,
+      },
+      n = {
+        ["<Tab>"] = actions.move_selection_worse,
+        ["<S-Tab>"] = actions.move_selection_better,
+      },
+    },
   },
   fzf = {
     fuzzy = true, -- false will only do exact matching
