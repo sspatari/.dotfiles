@@ -7,7 +7,9 @@ local formatting = null_ls.builtins.formatting
 
 null_ls.setup({
   sources = {
-    formatting.prettier.with({ filetypes = { "graphql" } }),
+    formatting.prettier.with({
+      filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact", "graphql", "markdown", "yaml" },
+    }),
     formatting.stylua,
   },
 })

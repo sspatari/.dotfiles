@@ -84,4 +84,10 @@ for _, a in ipairs(actions) do
 end
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.formatting()' ]])
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
+vim.cmd([[
+  augroup format_on_save
+    autocmd!
+    autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+    autocmd BufWritePre *.js,*.ts,*.jsx,*.tsx EslintFixAll
+  augroup end
+]])
