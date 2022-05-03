@@ -46,6 +46,7 @@ return packer.startup({
 
     -- Colorschemes
     use("Mofiqul/dracula.nvim")
+    use("morhetz/gruvbox")
 
     -- LSP
     use("neovim/nvim-lspconfig") -- enable LSP
