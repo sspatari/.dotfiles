@@ -88,6 +88,5 @@ vim.cmd([[
   augroup format_on_save
     autocmd!
     autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
-    autocmd BufWritePre *.js,*.ts,*.jsx,*.tsx EslintFixAll
   augroup end
 ]])
