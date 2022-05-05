@@ -1,4 +1,5 @@
 -- require all language server modules
+require("user.lsp.gopls")
 require("user.lsp.typescript")
 require("user.lsp.eslint")
 require("user.lsp.vue")
