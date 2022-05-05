@@ -42,6 +42,7 @@ nvim_tree.setup({
     },
   },
   view = {
+    hide_root_folder = true,
     mappings = {
       list = {
         { key = { "l", "<CR>" }, cb = tree_cb("edit") },
