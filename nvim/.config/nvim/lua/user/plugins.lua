@@ -1,5 +1,9 @@
 local fn = vim.fn
 
+local function get_setup(name)
+  return string.format('require("lua/user/%s")', name)
+end
+
 -- Automatically install packer
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -135,6 +139,8 @@ return packer.startup({
       "weilbith/nvim-code-action-menu",
       cmd = "CodeActionMenu",
     })
+
+    use({ "lukas-reineke/indent-blankline.nvim", config = get_setup("indent-blankline") })
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
