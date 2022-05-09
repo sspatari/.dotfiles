@@ -1,7 +1,7 @@
 local fn = vim.fn
 
-local function get_setup(name)
-  return string.format('require("lua/user/%s")', name)
+local function get_config(name)
+  return string.format('require("user/%s")', name)
 end
 
 -- Automatically install packer
@@ -54,27 +54,35 @@ return packer.startup({
     use("morhetz/gruvbox")
 
     -- LSP
-    use("neovim/nvim-lspconfig") -- enable LSP
-    use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
+    use({ "neovim/nvim-lspconfig", config = get_config("lsp") }) -- enable LSP
+    use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") }) -- for formatters and linters
 
     -- Telescope
     use({
       "nvim-telescope/telescope.nvim",
-      requires = { { "nvim-lua/popup.nvim" }, { "nvim-lua/plenary.nvim" } },
+      requires = {
+        { "nvim-lua/popup.nvim" },
+        { "nvim-lua/plenary.nvim" },
+        { "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+      },
+      config = get_config("telescope"),
     })
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
     -- Treesitter
     use({
       "nvim-treesitter/nvim-treesitter",
+      requires = {
+        "p00f/nvim-ts-rainbow",
+      },
       run = ":TSUpdate",
+      config = get_config("treesitter"),
     })
-    use("p00f/nvim-ts-rainbow")
 
     -- LuaLine
     use({
       "hoob3rt/lualine.nvim",
       requires = { "kyazdani42/nvim-web-devicons", opt = true },
+      config = get_config("lualine"),
     })
 
     -- Autocomplete
@@ -88,6 +96,7 @@ return packer.startup({
         "hrsh7th/cmp-path", -- file path completions
         "saadparwaiz1/cmp_luasnip", -- snippets completions
       },
+      config = get_config("cmp"),
     })
 
     -- Snippets
@@ -100,38 +109,47 @@ return packer.startup({
 
     -- Git
     use("tpope/vim-fugitive")
-    use("lewis6991/gitsigns.nvim")
+    use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns") })
 
     -- Commenting
-    use("JoosepAlviste/nvim-ts-context-commentstring")
-    use("numToStr/Comment.nvim")
+    use({
+      "numToStr/Comment.nvim",
+      requires = { "JoosepAlviste/nvim-ts-context-commentstring" },
+      config = get_config("comment"),
+    })
 
     -- windwp
     use("windwp/nvim-ts-autotag") -- auto close and rename tags
-    use("windwp/nvim-autopairs")
+    use({
+      "windwp/nvim-autopairs",
+      requires = { "hrsh7th/nvim-cmp" },
+      config = get_config("autopairs"),
+    })
 
     -- hightlight matching tag in html,jsx etc.
-    use("leafOfTree/vim-matchtag")
+    use({ "leafOfTree/vim-matchtag", config = get_config("matchtag") })
 
     -- motions on speed
-    use("phaazon/hop.nvim")
+    use({ "phaazon/hop.nvim", config = get_config("hop") })
 
     -- file tree
     use({
       "kyazdani42/nvim-tree.lua",
       requires = { "kyazdani42/nvim-web-devicons" },
+      config = get_config("nvim-tree"),
     })
 
     -- icons in completion
-    use("onsails/lspkind-nvim")
+    use({ "onsails/lspkind-nvim", config = get_config("lspkind") })
 
     -- WhichKey
-    use("folke/which-key.nvim")
+    use({ "folke/which-key.nvim", config = get_config("whichkey") })
 
     -- Todo comments
     use({
       "folke/todo-comments.nvim",
-      requires = "nvim-lua/plenary.nvim",
+      requires = { "nvim-lua/plenary.nvim" },
+      config = get_config("todo-comments"),
     })
 
     -- better code action menu
@@ -140,7 +158,7 @@ return packer.startup({
       cmd = "CodeActionMenu",
     })
 
-    use({ "lukas-reineke/indent-blankline.nvim", config = get_setup("indent-blankline") })
+    use({ "lukas-reineke/indent-blankline.nvim", config = get_config("indent-blankline") })
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

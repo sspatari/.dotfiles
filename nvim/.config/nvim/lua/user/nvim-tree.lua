@@ -47,8 +47,6 @@ nvim_tree.setup({
       list = {
         { key = { "l", "<CR>" }, cb = tree_cb("edit") },
         { key = "h", cb = tree_cb("close_node") },
-        { key = "v", cb = tree_cb("vsplit") },
-        { key = "x", cb = tree_cb("split") },
       },
     },
     number = false,
