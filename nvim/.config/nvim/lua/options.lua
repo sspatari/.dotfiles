@@ -29,6 +29,8 @@ local options = {
   -- timeout for whichkey
   timeoutlen = 500,
   undofile = true, -- enable persistent undo
+  swapfile = false,
+  backup = false,
   smartcase = true,
   ignorecase = true,
 }
