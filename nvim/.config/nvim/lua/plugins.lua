@@ -109,6 +109,7 @@ return packer.startup({
 
     -- Git
     use("tpope/vim-fugitive")
+    use("tpope/vim-rhubarb")
     use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns") })
 
     -- Commenting
