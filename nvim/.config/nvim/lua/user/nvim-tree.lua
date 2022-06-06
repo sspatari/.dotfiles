@@ -8,9 +8,6 @@ if not config_status_ok then
   return
 end
 
-vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_highlight_opened_files = 1
-
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup({
@@ -30,6 +27,8 @@ nvim_tree.setup({
     enable = true,
   },
   renderer = {
+    highlight_git = true,
+    highlight_opened_files = "name",
     indent_markers = {
       enable = true,
       icons = {
