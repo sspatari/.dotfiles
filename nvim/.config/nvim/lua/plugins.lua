@@ -159,6 +159,19 @@ return packer.startup({
       cmd = "CodeActionMenu",
     })
 
+    -- Debugger
+    use({
+      "mfussenegger/nvim-dap",
+      requires = {
+        { "Pocco81/DAPInstall.nvim", branch = "dev" },
+        "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/nvim-dap-ui",
+        "nvim-telescope/telescope-dap.nvim",
+        -- { "leoluz/nvim-dap-go", module = "dap-go" },
+      },
+      config = get_config("dap"),
+    })
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
