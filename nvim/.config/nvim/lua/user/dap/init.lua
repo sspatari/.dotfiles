@@ -24,7 +24,7 @@ dap_install.config("go_delve", {})
 dap_install.config("jsnode", {})
 dap_install.config("chrome", {})
 
--- require("user.dap.node")
--- require("user.dap.chrome")
+require("user.dap.node")
+
 dap_vt.setup()
 dapui.setup()

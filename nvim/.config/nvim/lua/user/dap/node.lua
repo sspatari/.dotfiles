@@ -1,21 +1,21 @@
 local dap = require("dap")
 
-dap.adapters.node2 = {
-  type = "executable",
-  command = "node",
-  args = {
-    vim.fn.stdpath("data") .. "/dapinstall/jsnode_dbg/" .. "/vscode-node-debug2/out/src/nodeDebug.js",
-  },
-}
-
-dap.configurations.javascript = {
+dap.configurations.typescript = {
   {
+    name = "Run",
     type = "node2",
     request = "launch",
-    program = "${workspaceFolder}/${file}",
+    program = "${file}",
     cwd = vim.fn.getcwd(),
     sourceMaps = true,
     protocol = "inspector",
     console = "integratedTerminal",
+    outFiles = { "${workspaceFolder}/dist/**/*.js" },
+  },
+  {
+    name = "Attach to process",
+    type = "node2",
+    request = "attach",
+    processId = require("dap.utils").pick_process,
   },
 }
