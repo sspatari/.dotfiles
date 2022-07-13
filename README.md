@@ -23,7 +23,7 @@
 1. Install stow `GNU Stow` for you OS. Example for MacOS `brew install stow`
 2. Clone this repo inside your `$HOME` directory, and `cd` into it.
 ```zsh
-git clone git@github.com:woefe/dotfiles.git
+git clone git@github.com:sspatari/.dotfiles.git
 cd .dotfiles
 ```
 3. Use either `stow .` to install all or `stow` each folder separatly
