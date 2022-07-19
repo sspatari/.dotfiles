@@ -72,7 +72,9 @@ local mappings = {
     { "∆", ":m '>+1<CR>gv=gv" }, -- <Option-j>
     { "˚", ":m '<-2<CR>gv=gv" }, -- <Option-k>
   },
-  x = {},
+  x = {
+    { "p", '"_dP' }, -- Greatest remap ever, allow pasting same thing multiple times
+  },
 }
 
 register_mappings(mappings, { silent = true, noremap = true })
