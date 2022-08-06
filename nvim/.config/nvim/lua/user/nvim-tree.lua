@@ -29,11 +29,6 @@ nvim_tree.setup({
     highlight_opened_files = "name",
     indent_markers = {
       enable = true,
-      icons = {
-        corner = "└ ",
-        edge = "│ ",
-        none = "  ",
-      },
     },
   },
   view = {
