@@ -172,6 +172,29 @@ return packer.startup({
       config = get_config("dap"),
     })
 
+    use({
+      "nvim-neotest/neotest",
+      opt = true,
+      wants = {
+        "plenary.nvim",
+        "nvim-treesitter",
+        "FixCursorHold.nvim",
+        "neotest-plenary",
+        "neotest-go",
+        "neotest-jest",
+      },
+      requires = {
+        "nvim-lua/plenary.nvim",
+        "nvim-treesitter/nvim-treesitter",
+        "antoinemadec/FixCursorHold.nvim",
+        "nvim-neotest/neotest-plenary",
+        "nvim-neotest/neotest-go",
+        "haydenmeade/neotest-jest",
+      },
+      module = { "neotest" },
+      config = get_config("neotest"),
+    })
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
