@@ -54,7 +54,14 @@ return packer.startup({
     use("morhetz/gruvbox")
 
     -- LSP
-    use({ "neovim/nvim-lspconfig", config = get_config("lsp") }) -- enable LSP
+    use({
+      "neovim/nvim-lspconfig",
+      -- the 2 lines below are used to filter anoying 'file is a commonjs module
+      -- it can be converted to an ES module' warning
+      wants = { "nvim-lsp-ts-utils" },
+      requires = { "jose-elias-alvarez/nvim-lsp-ts-utils" },
+      config = get_config("lsp"),
+    }) -- enable LSP
     use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") }) -- for formatters and linters
 
     -- Telescope
