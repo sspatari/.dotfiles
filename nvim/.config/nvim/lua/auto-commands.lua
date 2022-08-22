@@ -36,3 +36,13 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     go_organize_imports(3000)
   end,
 })
+
+local highlight_yank = "highlight_yank"
+vim.api.nvim_create_augroup(highlight_yank, { clear = true })
+vim.api.nvim_create_autocmd("TextYankPost", {
+  group = highlight_yank,
+  desc = "Highlight on yank",
+  callback = function()
+    vim.highlight.on_yank({ higroup = "Visual", timeout = 200 })
+  end,
+})
