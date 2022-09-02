@@ -8,39 +8,42 @@ local function register_mappings(mappings, default_options)
   end
 end
 
--- NOTE: <leader> prefixed mappings are in whichkey-settings.lua
-
 local mappings = {
   i = {
-    -- Terminal window navigation
+    -- terminal window navigation
     { "<C-h>", "<C-\\><C-N><C-w>h" },
     { "<C-j>", "<C-\\><C-N><C-w>j" },
     { "<C-l>", "<C-\\><C-N><C-w>l" },
     { "<C-k>", "<C-\\><C-N><C-w>k" },
+
     -- moving text
     { "∆", "<ESC>:m .+1<CR>==gi" }, -- <Option-j>
     { "˚", "<ESC>:m .-2<CR>==gi" }, -- <Option-k>
   },
   n = {
-    -- Normal mode
-    -- Better window movement
+    -- better window movement
     { "<C-h>", "<C-w>h", { silent = true } },
     { "<C-j>", "<C-w>j", { silent = true } },
     { "<C-k>", "<C-w>k", { silent = true } },
     { "<C-l>", "<C-w>l", { silent = true } },
-    -- Resize with arrows
+
+    -- resize with arrows
     { "<C-Up>", ":resize -2<CR>", { silent = true } },
     { "<C-Down>", ":resize +2<CR>", { silent = true } },
     { "<C-Left>", ":vertical resize -2<CR>", { silent = true } },
     { "<C-Right>", ":vertical resize +2<CR>", { silent = true } },
+
     -- escape clears highlighting
     { "<ESC>", ":noh<CR><ESC>" },
-    -- hop words
-    { "s", ":HopWord<CR>" },
-    { "S", ":HopLine<CR>" },
-    -- yank to end of line on Y
-    { "Y", "y$" },
-    -- lsp mappings
+
+    -- hop
+    { "<leader>hw", ":HopWord<CR>" },
+    { "<leader>hl", ":HopLine<CR>" },
+    { "<leader>hc", "<CMD>lua require'hop'.hint_char1()<CR>" },
+    { "<leader>hd", "<CMD>lua require'hop'.hint_char2()<CR>" },
+    { "<leader>hp", "<CMD>lua require'hop'.hint_patterns()<CR>" },
+
+    -- lsp
     { "K", "<CMD>lua vim.lsp.buf.hover()<CR>" },
     { "<C-k>", "<CMD>lua vim.lsp.buf.signature_help()<CR>" },
     { "[d", "<CMD>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>" },
@@ -56,12 +59,13 @@ local mappings = {
     { "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>" }, --"Rename"
     { "<leader>lR", "<CMD>lua vim.lsp.buf.references()<CR>" }, --"List references"
     { "<leader>lc", "<CMD>lua vim.lsp.buf.code_action()<CR>" }, --"Code actions"
+
     -- general
     { "<leader>e", ":NvimTreeToggle<CR>" }, --"File Tree"
     { "<leader>T", ":TodoLocList<CR>" }, --"Todos list"
     { "<leader>c", ":CodeActionMenu<CR>" }, --"Code Actions"
 
-    -- telescope bindings
+    -- telescope
     { "<leader>ff", ":Telescope find_files<CR>" }, --"Find File"
     { "<leader>fb", ":Telescope buffers<CR>" }, --"Find Buffer"
     { "<leader>fn", ":TodoTelescope<CR>" }, --"Find Notes"
@@ -76,7 +80,7 @@ local mappings = {
     { "<leader>fM", ":Telescope man_pages<CR>" }, --"Man pages"
     { "<leader>fg", ":Telescope git_files<CR>" }, --"Find Git Files"
 
-    -- Debug
+    -- debug
     { "<leader>DR", "<CMD>lua require'dap'.run_to_cursor()<CR>" }, --"Run to Cursor"
     { "<leader>DE", "<CMD>lua require'dapui'.eval(vim.fn.input '[Expression] > ')<CR>" }, --"Evaluate Input"
     { "<leader>DC", "<CMD>lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<CR>" }, --"Conditional Breakpoint"
@@ -98,7 +102,7 @@ local mappings = {
     { "<leader>Dx", "<CMD>lua require'dap'.terminate()<CR>" }, --"Terminate"
     { "<leader>Du", "<CMD>lua require'dap'.step_out()<CR>" }, --"Step Out"
 
-    -- Neotest
+    -- neotest
     { "<leader>na", "<CMD>lua require('neotest').run.attach()<CR>" }, --"Attach"
     { "<leader>nf", "<CMD>lua require('neotest').run.run(vim.fn.expand('%'))<CR>" }, --"Run File"
     { "<leader>nF", "<CMD>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<CR>" }, --"Debug File"
@@ -111,23 +115,21 @@ local mappings = {
     { "<leader>ns", "<CMD>lua require('neotest').summary.toggle()<CR>" }, --"Summary"
   },
   t = {
-    -- Terminal mode
-    -- Terminal window navigation
+    -- terminal window navigation
     { "<C-h>", "<C-\\><C-N><C-w>h" },
     { "<C-j>", "<C-\\><C-N><C-w>j" },
     { "<C-k>", "<C-\\><C-N><C-w>k" },
     { "<C-l>", "<C-\\><C-N><C-w>l" },
+
     -- map escape to normal mode in terminal
     { "<Esc>", [[ <C-\><C-n> ]] },
     { "jj", [[ <C-\><C-n> ]] },
   },
   v = {
-    -- Visual/Select mode
-    -- Better indenting
+    -- better indenting
     { "<", "<gv" },
     { ">", ">gv" },
-    -- hop words
-    { "s", "<CMD>lua require'hop'.hint_words()<CR>" },
+
     -- moving text
     { "∆", ":m '>+1<CR>gv=gv" }, -- <Option-j>
     { "˚", ":m '<-2<CR>gv=gv" }, -- <Option-k>
@@ -136,9 +138,3 @@ local mappings = {
 }
 
 register_mappings(mappings, { silent = true, noremap = true })
-
--- hop in motion
-local actions = { "d", "c", "<", ">", "y" }
-for _, a in ipairs(actions) do
-  vim.api.nvim_set_keymap("n", a .. "s", a .. "<CMD>lua require'hop'.hint_char1()<CR>", {})
-end
