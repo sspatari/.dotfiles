@@ -27,7 +27,7 @@ local options = {
   spelllang = "en_gb",
   mousemodel = "popup",
   -- timeout for whichkey
-  timeoutlen = 500,
+  timeoutlen = 5000,
   undofile = true, -- enable persistent undo
   swapfile = false,
   backup = false,

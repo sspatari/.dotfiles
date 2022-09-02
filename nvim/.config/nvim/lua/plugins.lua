@@ -150,9 +150,6 @@ return packer.startup({
     -- icons in completion
     use({ "onsails/lspkind-nvim", config = get_config("lspkind") })
 
-    -- WhichKey
-    use({ "folke/which-key.nvim", config = get_config("whichkey") })
-
     -- Todo comments
     use({
       "folke/todo-comments.nvim",
