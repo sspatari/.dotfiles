@@ -55,7 +55,7 @@ local mappings = {
     { "gr", "<CMD>lua vim.lsp.buf.references()<CR>" },
     { "gi", "<CMD>lua vim.lsp.buf.implementation()<CR>" },
     { "<leader>r", "<CMD>lua vim.lsp.buf.rename()<CR>" }, --"Rename"
-    { "<leader>lf", "<CMD>lua vim.lsp.buf.formatting()<CR>" }, --"Format File"
+    { "<leader>lf", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>" }, --"Format File"
     { "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>" }, --"Rename"
     { "<leader>lR", "<CMD>lua vim.lsp.buf.references()<CR>" }, --"List references"
     { "<leader>lc", "<CMD>lua vim.lsp.buf.code_action()<CR>" }, --"Code actions"

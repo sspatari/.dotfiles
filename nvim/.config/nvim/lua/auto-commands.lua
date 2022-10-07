@@ -13,7 +13,7 @@ local function go_organize_imports(wait_ms)
 end
 
 vim.api.nvim_create_user_command("Format", function()
-  vim.lsp.buf.formatting()
+  vim.lsp.buf.format({ async = true })
 end, {})
 
 local formatOnSaveGroup = "format_on_save"
@@ -22,7 +22,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   group = formatOnSaveGroup,
   desc = "Run formatter",
   callback = function()
-    vim.lsp.buf.formatting_sync()
+    vim.lsp.buf.format()
   end,
 })
 

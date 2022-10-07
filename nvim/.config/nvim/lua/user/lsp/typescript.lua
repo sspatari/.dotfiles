@@ -1,6 +1,6 @@
 local on_attach = function(client)
-  client.resolved_capabilities.document_formatting = false
-  client.resolved_capabilities.document_range_formatting = false
+  client.server_capabilities.documentFormattingProvider = false
+  client.server_capabilities.documentRangeFormattingProvider = false
 
   local status_ok, ts_utils = pcall(require, "nvim-lsp-ts-utils")
   if not status_ok then
