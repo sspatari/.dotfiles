@@ -88,7 +88,7 @@ return packer.startup({
     -- LuaLine
     use({
       "hoob3rt/lualine.nvim",
-      requires = { "kyazdani42/nvim-web-devicons", opt = true },
+      requires = { "kyazdani42/nvim-web-devicons" },
       config = get_config("lualine"),
     })
 
