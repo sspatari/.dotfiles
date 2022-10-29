@@ -54,6 +54,8 @@ return packer.startup({
     use("morhetz/gruvbox")
 
     -- LSP
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
     use({
       "neovim/nvim-lspconfig",
       -- the 2 lines below are used to filter anoying 'file is a commonjs module
