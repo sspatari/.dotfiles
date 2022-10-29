@@ -2,7 +2,6 @@
 require("user.lsp.gopls")
 require("user.lsp.typescript")
 require("user.lsp.eslint")
-require("user.lsp.vue")
 require("user.lsp.css")
 require("user.lsp.html")
 require("user.lsp.luals")

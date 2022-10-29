@@ -53,19 +53,6 @@ return packer.startup({
     use("Mofiqul/dracula.nvim")
     use("morhetz/gruvbox")
 
-    -- LSP
-    use("williamboman/mason.nvim")
-    use("williamboman/mason-lspconfig.nvim")
-    use({
-      "neovim/nvim-lspconfig",
-      -- the 2 lines below are used to filter anoying 'file is a commonjs module
-      -- it can be converted to an ES module' warning
-      wants = { "nvim-lsp-ts-utils" },
-      requires = { "jose-elias-alvarez/nvim-lsp-ts-utils" },
-      config = get_config("lsp"),
-    }) -- enable LSP
-    use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") }) -- for formatters and linters
-
     -- Telescope
     use({
       "nvim-telescope/telescope.nvim",
@@ -76,6 +63,33 @@ return packer.startup({
       },
       config = get_config("telescope"),
     })
+
+    -- LSP
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
+    use({
+      "neovim/nvim-lspconfig",
+      -- the 2 lines below are used to filter anoying 'file is a commonjs module
+      -- it can be converted to an ES module' warning
+      wants = { "nvim-lsp-ts-utils" },
+      requires = { "jose-elias-alvarez/nvim-lsp-ts-utils" },
+      config = get_config("lsp"),
+    })
+
+    -- Debugger
+    use({
+      "mfussenegger/nvim-dap",
+      requires = {
+        "theHamsta/nvim-dap-virtual-text",
+        "rcarriga/nvim-dap-ui",
+        "nvim-telescope/telescope-dap.nvim",
+         "leoluz/nvim-dap-go",
+      },
+      config = get_config("dap"),
+    })
+
+    -- Formatters and linters
+    use({ "jose-elias-alvarez/null-ls.nvim", config = get_config("null-ls") })
 
     -- Treesitter
     use({
@@ -163,19 +177,6 @@ return packer.startup({
     use({
       "weilbith/nvim-code-action-menu",
       cmd = "CodeActionMenu",
-    })
-
-    -- Debugger
-    use({
-      "mfussenegger/nvim-dap",
-      requires = {
-        { "Pocco81/DAPInstall.nvim", branch = "dev" },
-        "theHamsta/nvim-dap-virtual-text",
-        "rcarriga/nvim-dap-ui",
-        "nvim-telescope/telescope-dap.nvim",
-        -- { "leoluz/nvim-dap-go", module = "dap-go" },
-      },
-      config = get_config("dap"),
     })
 
     use({
