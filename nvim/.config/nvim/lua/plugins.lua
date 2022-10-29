@@ -83,7 +83,8 @@ return packer.startup({
         "theHamsta/nvim-dap-virtual-text",
         "rcarriga/nvim-dap-ui",
         "nvim-telescope/telescope-dap.nvim",
-         "leoluz/nvim-dap-go",
+        "leoluz/nvim-dap-go",
+        "mxsdev/nvim-dap-vscode-js",
       },
       config = get_config("dap"),
     })
