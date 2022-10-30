@@ -17,39 +17,76 @@ function M.setup()
     adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
   })
 
-  for _, language in ipairs({ "typescript", "javascript" }) do
-    dap.configurations[language] = {
-      {
-        type = "pwa-node",
-        request = "launch",
-        name = "Launch file",
-        program = "${file}",
-        cwd = "${workspaceFolder}",
+  dap.configurations.javascript = {
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach",
+      processId = require("dap.utils").pick_process,
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Debug Jest Tests",
+      -- trace = true, -- include debugger info
+      runtimeExecutable = "node",
+      runtimeArgs = {
+        "./node_modules/jest/bin/jest.js",
+        "--runInBand",
       },
-      {
-        type = "pwa-node",
-        request = "attach",
-        name = "Attach",
-        processId = require("dap.utils").pick_process,
-        cwd = "${workspaceFolder}",
+      rootPath = "${workspaceFolder}",
+      cwd = "${workspaceFolder}",
+      console = "integratedTerminal",
+      internalConsoleOptions = "neverOpen",
+    },
+  }
+
+  dap.configurations.typescript = {
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Launch file",
+      program = "${file}",
+      cwd = "${workspaceFolder}",
+      runtimeArgs = { "-r", "ts-node/register" },
+      sourceMaps = true,
+      skipFiles = { "<node_internals>/**", "node_modules/**" },
+      resolveSourceMapLocations = {
+        "${workspaceFolder}/**",
+        "!**/node_modules/**",
       },
-      {
-        type = "pwa-node",
-        request = "launch",
-        name = "Debug Jest Tests",
-        -- trace = true, -- include debugger info
-        runtimeExecutable = "node",
-        runtimeArgs = {
-          "./node_modules/jest/bin/jest.js",
-          "--runInBand",
-        },
-        rootPath = "${workspaceFolder}",
-        cwd = "${workspaceFolder}",
-        console = "integratedTerminal",
-        internalConsoleOptions = "neverOpen",
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Attach",
+      processId = require("dap.utils").pick_process,
+      cwd = "${workspaceFolder}",
+    },
+    {
+      type = "pwa-node",
+      request = "launch",
+      name = "Debug Jest Tests",
+      -- trace = true, -- include debugger info
+      runtimeExecutable = "node",
+      runtimeArgs = {
+        "./node_modules/jest/bin/jest.js",
+        "--runInBand",
       },
-    }
-  end
+      rootPath = "${workspaceFolder}",
+      cwd = "${workspaceFolder}",
+      console = "integratedTerminal",
+      internalConsoleOptions = "neverOpen",
+    },
+  }
 end
 
 return M
