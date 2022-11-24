@@ -37,11 +37,11 @@ local mappings = {
     { "<ESC>", ":noh<CR><ESC>" },
 
     -- hop
-    { "<leader>hw", ":HopWord<CR>" },
-    { "<leader>hl", ":HopLine<CR>" },
-    { "<leader>hc", "<CMD>lua require'hop'.hint_char1()<CR>" },
-    { "<leader>hd", "<CMD>lua require'hop'.hint_char2()<CR>" },
-    { "<leader>hp", "<CMD>lua require'hop'.hint_patterns()<CR>" },
+    { "<leader><leader>w", ":HopWord<CR>" },
+    { "<leader><leader>l", ":HopLine<CR>" },
+    { "<leader><leader>c", "<CMD>lua require'hop'.hint_char1()<CR>" },
+    { "<leader><leader>C", "<CMD>lua require'hop'.hint_char2()<CR>" },
+    { "<leader><leader>p", "<CMD>lua require'hop'.hint_patterns()<CR>" },
 
     -- lsp
     { "K", "<CMD>lua vim.lsp.buf.hover()<CR>" },
