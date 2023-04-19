@@ -11,7 +11,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 -- cmd to the absolute path ($HOME and ~ are not expanded) of your unzipped and compiled lua-language-server.
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#sumneko_lua
 
-require("lspconfig").sumneko_lua.setup({
+require("lspconfig").lua_ls.setup({
   on_attach = on_attach,
   settings = {
     Lua = {
