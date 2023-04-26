@@ -52,6 +52,7 @@ return packer.startup({
     use("folke/tokyonight.nvim")
     use("Mofiqul/dracula.nvim")
     use("morhetz/gruvbox")
+    use({ "catppuccin/nvim", as = "catppuccin" })
 
     -- Telescope
     use({
