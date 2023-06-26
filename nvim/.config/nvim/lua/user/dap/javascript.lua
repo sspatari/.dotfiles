@@ -1,4 +1,4 @@
-local DEBUGGER_PATH = vim.fn.stdpath("data") .. "/mason/packages/js-debug-adapter"
+local DEBUGGER_PATH = vim.fn.stdpath("data") .. "/site/pack/packer/opt/vscode-js-debug"
 
 local M = {}
 
@@ -11,9 +11,9 @@ function M.setup()
   end
 
   dap_vscode_js.setup({
-    node_path = "node",
+    --[[ node_path = "node", ]]
     debugger_path = DEBUGGER_PATH,
-    -- debugger_cmd = { "js-debug-adapter" },
+    --[[ debugger_cmd = { "js-debug-adapter" }, ]]
     adapters = { "pwa-node", "pwa-chrome", "pwa-msedge", "node-terminal", "pwa-extensionHost" }, -- which adapters to register in nvim-dap
   })
 

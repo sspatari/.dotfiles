@@ -86,6 +86,11 @@ return packer.startup({
         "nvim-telescope/telescope-dap.nvim",
         "leoluz/nvim-dap-go",
         "mxsdev/nvim-dap-vscode-js",
+        {
+          "microsoft/vscode-js-debug",
+          opt = true,
+          run = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
+        },
       },
       config = get_config("dap"),
     })
