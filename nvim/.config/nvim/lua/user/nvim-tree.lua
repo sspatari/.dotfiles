@@ -106,7 +106,10 @@ nvim_tree.setup({
     },
   },
   view = {
-    adaptive_size = true,
+    width = {
+      min = 40,
+      max = 70,
+    },
     number = false,
     relativenumber = true,
   },
