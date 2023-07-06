@@ -49,14 +49,12 @@ local mappings = {
     { "[d", "<CMD>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>" },
     { "]d", "<CMD>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>" },
     { "<leader>d", "<CMD>lua vim.diagnostic.open_float({ border = 'rounded' })<CR>" }, --"Line Diagnostics"
-    { "<leader>ld", "<CMD>lua vim.diagnostic.open_float({ border = 'rounded' })<CR>" }, --"Line Diagnostics"
     { "gD", "<CMD>lua vim.lsp.buf.declaration()<CR>" },
     { "gd", "<CMD>lua vim.lsp.buf.definition()<CR>" },
     { "gr", "<CMD>lua vim.lsp.buf.references()<CR>" },
     { "gi", "<CMD>lua vim.lsp.buf.implementation()<CR>" },
-    { "<leader>r", "<CMD>lua vim.lsp.buf.rename()<CR>" }, --"Rename"
-    { "<leader>lf", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>" }, --"Format File"
     { "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>" }, --"Rename"
+    { "<leader>lf", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>" }, --"Format File"
     { "<leader>lR", "<CMD>lua vim.lsp.buf.references()<CR>" }, --"List references"
     { "<leader>lc", "<CMD>lua vim.lsp.buf.code_action()<CR>" }, --"Code actions"
 
