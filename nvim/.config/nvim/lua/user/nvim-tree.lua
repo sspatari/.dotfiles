@@ -112,6 +112,7 @@ nvim_tree.setup({
     },
     number = false,
     relativenumber = true,
+    preserve_window_proportions = true,
   },
   actions = {
     open_file = {
