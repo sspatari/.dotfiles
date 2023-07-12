@@ -5,7 +5,7 @@ end
 
 lualine.setup({
   sections = {
-    lualine_c = { { "filename", file_status = true, path = 1 } },
+    lualine_c = { { "filename", file_status = true, path = 1, shorting_target = 60 } },
   },
   inactive_sections = {
     lualine_c = { { "filename", file_status = true, path = 1 } },
