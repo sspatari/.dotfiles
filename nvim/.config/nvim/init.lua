@@ -1,5 +1,4 @@
 require("options")
-require("user.mason-config")
 require("plugins")
 require("colorscheme")
 require("mappings")
