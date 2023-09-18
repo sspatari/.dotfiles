@@ -39,6 +39,7 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+-- Make sure to set `mapleader` before lazy so your mappings are correct
 vim.g.mapleader = " "
 
 vim.cmd([[set inccommand=nosplit]])

@@ -1,5 +1,5 @@
 require("options")
-require("plugins")
+require("plugin-manager")
 require("colorscheme")
 require("mappings")
 require("auto-commands")
