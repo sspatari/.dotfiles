@@ -24,7 +24,8 @@ return {
           "--line-number",
           "--column",
           "--smart-case",
-          "--trim", -- add this value
+          "--trim",
+          "--hidden",
         },
         layout_strategy = "vertical",
         mappings = {
