@@ -6,6 +6,7 @@ return {
   "Mofiqul/dracula.nvim",
   "morhetz/gruvbox",
   { "catppuccin/nvim", name = "catppuccin" },
+  "navarasu/onedark.nvim",
 
   -- Snippets
   {
