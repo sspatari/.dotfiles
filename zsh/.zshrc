@@ -144,7 +144,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-### Android
+# Android
 export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export ANDROID_HOME=$HOME/Library/Android/sdk
 # avdmanager, sdkmanager
@@ -157,6 +157,9 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export JAVA_HOME=$(/usr/libexec/java_home)
 # Add that to the global PATH variable
 export PATH=${JAVA_HOME}/bin:$PATH
+
+# Homebrew
+export PATH=/usr/local/sbin:$PATH
 
 # Aws
 export AWS_SDK_LOAD_CONFIG=1
