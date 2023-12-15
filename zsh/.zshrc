@@ -158,6 +158,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Add that to the global PATH variable
 export PATH=${JAVA_HOME}/bin:$PATH
 
+# Add .NET Core SDK tools
+export PATH=$PATH:$HOME/.dotnet/tools
+
 # Homebrew
 export PATH=/usr/local/sbin:$PATH
 
