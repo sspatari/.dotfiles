@@ -8,10 +8,6 @@ return {
     end
 
     configs.setup({
-      context_commentstring = {
-        enable = true,
-        enable_autocmd = false,
-      },
       ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
       -- ignore_install = {}, -- List of parsers to ignore installing
       highlight = {
