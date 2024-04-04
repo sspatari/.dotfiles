@@ -15,24 +15,8 @@ local mappings = {
     { "<C-j>", "<C-\\><C-N><C-w>j" },
     { "<C-l>", "<C-\\><C-N><C-w>l" },
     { "<C-k>", "<C-\\><C-N><C-w>k" },
-
-    --[[ -- moving text ]]
-    --[[ { "∆", "<ESC>:m .+1<CR>==gi" }, -- <Option-j> ]]
-    --[[ { "˚", "<ESC>:m .-2<CR>==gi" }, -- <Option-k> ]]
   },
   n = {
-    --[[ -- better window movement ]]
-    --[[ { "<C-h>", "<C-w>h", { silent = true } }, ]]
-    --[[ { "<C-j>", "<C-w>j", { silent = true } }, ]]
-    --[[ { "<C-k>", "<C-w>k", { silent = true } }, ]]
-    --[[ { "<C-l>", "<C-w>l", { silent = true } }, ]]
-
-    -- resize with arrows
-    { "<C-Up>", ":resize -2<CR>", { silent = true } },
-    { "<C-Down>", ":resize +2<CR>", { silent = true } },
-    { "<C-Left>", ":vertical resize -2<CR>", { silent = true } },
-    { "<C-Right>", ":vertical resize +2<CR>", { silent = true } },
-
     -- escape clears highlighting
     { "<ESC>", ":noh<CR><ESC>" },
 
