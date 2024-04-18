@@ -119,6 +119,13 @@ return {
           resize_window = false,
         },
       },
+      filesystem_watchers = {
+        enable = true,
+        debounce_delay = 50,
+        ignore_dirs = {
+          "node_modules",
+        },
+      },
     })
   end,
 }
