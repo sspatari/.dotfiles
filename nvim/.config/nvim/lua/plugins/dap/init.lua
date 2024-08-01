@@ -12,6 +12,10 @@ return {
       lazy = true,
       build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
     },
+    {
+      "Joakker/lua-json5",
+      build = "./install.sh",
+    },
   },
   config = function()
     local telescope_status_ok, telescope = pcall(require, "telescope")
