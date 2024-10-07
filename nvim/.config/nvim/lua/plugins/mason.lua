@@ -22,7 +22,7 @@ return {
         "pyright",
         "rust_analyzer",
         "tailwindcss",
-        "tsserver",
+        "ts_ls",
         "yamlls",
         "omnisharp",
       },

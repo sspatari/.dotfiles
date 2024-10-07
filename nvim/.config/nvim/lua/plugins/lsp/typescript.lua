@@ -37,7 +37,7 @@ local function filterReactDTS(value)
   return string.match(value.targetUri or value.uri, "react/index.d.ts") == nil
 end
 
-lspconfig.tsserver.setup({
+lspconfig.ts_ls.setup({
   on_attach = on_attach,
   -- other options
   handlers = {
