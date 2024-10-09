@@ -28,4 +28,7 @@ return {
     "weilbith/nvim-code-action-menu",
     cmd = "CodeActionMenu",
   },
+
+  -- Highlight the word under the cursor
+  "RRethy/vim-illuminate",
 }
