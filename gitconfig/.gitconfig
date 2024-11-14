@@ -2,7 +2,7 @@
 [user]
   # Please adapt and uncomment the following lines:
   name = Stanislav Spatari
-  email = spatari.stanislav@gmail.com
+	email = spatari.stanislav@gmail.com
 [init]
 	defaultBranch = master
 [core]
