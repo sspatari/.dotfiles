@@ -23,12 +23,6 @@ return {
   -- auto close and rename tags
   "windwp/nvim-ts-autotag",
 
-  -- better code action menu
-  {
-    "weilbith/nvim-code-action-menu",
-    cmd = "CodeActionMenu",
-  },
-
   -- Highlight the word under the cursor
   "RRethy/vim-illuminate",
 }

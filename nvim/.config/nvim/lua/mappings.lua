@@ -40,12 +40,11 @@ local mappings = {
     { "<leader>lr", "<CMD>lua vim.lsp.buf.rename()<CR>" }, --"Rename"
     { "<leader>lf", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>" }, --"Format File"
     { "<leader>lR", "<CMD>lua vim.lsp.buf.references()<CR>" }, --"List references"
-    { "<leader>lc", "<CMD>lua vim.lsp.buf.code_action()<CR>" }, --"Code actions"
+    { "<leader>c", "<CMD>lua vim.lsp.buf.code_action()<CR>" }, --"Code actions"
 
     -- general
     { "<leader>e", ":NvimTreeToggle<CR>" }, --"File Tree"
     { "<leader>T", ":TodoLocList<CR>" }, --"Todos list"
-    { "<leader>c", ":CodeActionMenu<CR>" }, --"Code Actions"
 
     -- telescope
     { "<leader>ff", ":Telescope find_files<CR>" }, --"Find File"
@@ -54,7 +53,6 @@ local mappings = {
     { "<leader>ft", ":Telescope builtin<CR>" }, --"Telescope builtin"
     { "<leader>fs", ":Telescope live_grep<CR>" }, --"Search In Files"
     { "<leader>fw", ":Telescope grep_string<CR>" }, --"Search word under cursor"
-    { "<leader>fc", ":Telescope lsp_code_actions<CR>" }, --"Code Actions"
     { "<leader>fr", ":Telescope lsp_references<CR>" }, --"Find References"
     { "<leader>fd", ":Telescope diagnostics<CR>" }, --"Document Diagnostics"
     { "<leader>fm", ":Telescope marks<CR>" }, --"Marks"
