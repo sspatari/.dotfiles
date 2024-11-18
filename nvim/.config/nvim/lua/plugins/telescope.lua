@@ -27,6 +27,9 @@ return {
           "--smart-case",
           "--trim",
           "--hidden",
+
+          -- Exclude some patterns from search
+          "--glob=!**/.git/*",
         },
         layout_strategy = "vertical",
         mappings = {
