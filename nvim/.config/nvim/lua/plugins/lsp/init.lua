@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  dependencies = { "jose-elias-alvarez/nvim-lsp-ts-utils", "Hoffs/omnisharp-extended-lsp.nvim" },
+  dependencies = { "jose-elias-alvarez/nvim-lsp-ts-utils" },
   config = function()
     -- require all language server modules
     require("plugins.lsp.gopls")
@@ -16,7 +16,6 @@ return {
     require("plugins.lsp.prisma")
     require("plugins.lsp.gql")
     require("plugins.lsp.rust")
-    require("plugins.lsp.omnisharp")
 
     -- Customization and appearance -----------------------------------------
     -- change gutter diagnostic symbols

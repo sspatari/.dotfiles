@@ -24,7 +24,6 @@ return {
         "tailwindcss",
         "ts_ls",
         "yamlls",
-        "omnisharp",
       },
     })
   end,
