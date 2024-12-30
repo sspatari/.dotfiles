@@ -159,6 +159,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 
 # Add .NET Core SDK tools
+export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
 export PATH=$PATH:$HOME/.dotnet/tools
 
 # Homebrew

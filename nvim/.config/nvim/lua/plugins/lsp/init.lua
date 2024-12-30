@@ -16,6 +16,7 @@ return {
     require("plugins.lsp.prisma")
     require("plugins.lsp.gql")
     require("plugins.lsp.rust")
+    require("plugins.lsp.csharpls")
 
     -- Customization and appearance -----------------------------------------
     -- change gutter diagnostic symbols
