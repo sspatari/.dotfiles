@@ -159,7 +159,10 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export PATH=${JAVA_HOME}/bin:$PATH
 
 # Add .NET Core SDK tools
-export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+# brew install dotnet@8
+# dotnet tool install --global csharp-ls
+export DOTNET_ROOT="/usr/local/opt/dotnet@8/libexec"
+export PATH="/usr/local/opt/dotnet@8/bin:$PATH"
 export PATH=$PATH:$HOME/.dotnet/tools
 
 # Homebrew
