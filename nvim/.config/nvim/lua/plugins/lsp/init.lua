@@ -16,7 +16,6 @@ return {
     require("plugins.lsp.prisma")
     require("plugins.lsp.gql")
     require("plugins.lsp.rust")
-    require("plugins.lsp.csharpls")
     require("plugins.lsp.taplo")
 
     -- Customization and appearance -----------------------------------------

@@ -24,7 +24,6 @@ return {
         "tailwindcss",
         "ts_ls",
         "yamlls",
-        "csharp_ls",
       },
     })
   end,
