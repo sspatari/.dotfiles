@@ -6,7 +6,6 @@ return {
     "rcarriga/nvim-dap-ui",
     "nvim-telescope/telescope-dap.nvim",
     "leoluz/nvim-dap-go",
-    "mxsdev/nvim-dap-vscode-js",
     {
       "microsoft/vscode-js-debug",
       lazy = true,
