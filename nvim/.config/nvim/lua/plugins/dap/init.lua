@@ -6,15 +6,15 @@ return {
     "rcarriga/nvim-dap-ui",
     "nvim-telescope/telescope-dap.nvim",
     "leoluz/nvim-dap-go",
-    {
-      "microsoft/vscode-js-debug",
-      lazy = true,
-      build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out",
-    },
-    {
-      "Joakker/lua-json5",
-      build = "./install.sh",
-    },
+    --[[ { ]]
+    --[[   "microsoft/vscode-js-debug", ]]
+    --[[   lazy = true, ]]
+    --[[   build = "npm install --legacy-peer-deps && npx gulp vsDebugServerBundle && mv dist out", ]]
+    --[[ }, ]]
+    --[[ { ]]
+    --[[   "Joakker/lua-json5", ]]
+    --[[   build = "./install.sh", ]]
+    --[[ }, ]]
   },
   config = function()
     local telescope_status_ok, telescope = pcall(require, "telescope")
@@ -37,13 +37,16 @@ return {
     dap.set_log_level("TRACE")
 
     -- Automatically open UI
-    dap.listeners.after.event_initialized["dapui_config"] = function()
+    dap.listeners.before.attach.dapui_config = function()
       dapui.open()
     end
-    dap.listeners.before.event_terminated["dapui_config"] = function()
+    dap.listeners.before.launch.dapui_config = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated.dapui_config = function()
       dapui.close()
     end
-    dap.listeners.before.event_exited["dapui_config"] = function()
+    dap.listeners.before.event_exited.dapui_config = function()
       dapui.close()
     end
 
@@ -56,6 +59,6 @@ return {
     vim.fn.sign_define("DapBreakpoint", { text = "🟥", texthl = "", linehl = "", numhl = "" })
 
     require("plugins.dap.go").setup()
-    require("plugins.dap.javascript").setup()
+    --[[ require("plugins.dap.javascript").setup() ]]
   end,
 }
