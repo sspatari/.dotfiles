@@ -42,7 +42,7 @@ lspconfig.ts_ls.setup({
   -- other options
   handlers = {
     ["textDocument/definition"] = function(err, result, method, ...)
-      if vim.tbl_islist(result) and #result > 1 then
+      if vim.islist(result) and #result > 1 then
         local filtered_result = filter(result, filterReactDTS)
         return vim.lsp.handlers["textDocument/definition"](err, filtered_result, method, ...)
       end
