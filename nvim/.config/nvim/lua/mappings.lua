@@ -28,8 +28,8 @@ local mappings = {
     { "<leader><leader>p", "<CMD>lua require'hop'.hint_patterns()<CR>" },
 
     -- lsp
-    { "K", "<CMD>lua vim.lsp.buf.hover()<CR>" },
-    { "<C-k>", "<CMD>lua vim.lsp.buf.signature_help()<CR>" },
+    { "K", "<CMD>lua vim.lsp.buf.hover({ border = 'rounded' })<CR>" },
+    { "<C-k>", "<CMD>lua vim.lsp.buf.signature_help({ border = 'rounded' })<CR>" },
     { "[d", "<CMD>lua vim.diagnostic.goto_prev({ float = { border = 'rounded' }})<CR>" },
     { "]d", "<CMD>lua vim.diagnostic.goto_next({ float = { border = 'rounded' }})<CR>" },
     { "<leader>d", "<CMD>lua vim.diagnostic.open_float({ border = 'rounded' })<CR>" }, --"Line Diagnostics"
