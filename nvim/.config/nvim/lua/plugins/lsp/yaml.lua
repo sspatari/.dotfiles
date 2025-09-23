@@ -1,1 +1,2 @@
-require("lspconfig").yamlls.setup({})
+vim.lsp.config("yamlls", {})
+vim.lsp.enable("yamlls")

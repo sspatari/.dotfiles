@@ -1,5 +1,7 @@
-require("lspconfig").prismals.setup({
+vim.lsp.config("prismals", {
   root_dir = function()
-    return vim.loop.cwd()
+    ---@diagnostic disable-next-line: undefined-field
+    return vim.uv.cwd()
   end,
 })
+vim.lsp.enable("prismals")

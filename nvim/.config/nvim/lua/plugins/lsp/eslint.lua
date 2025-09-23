@@ -3,6 +3,7 @@ local on_attach = function(client)
   client.server_capabilities.documentRangeFormattingProvider = true
 end
 
-require("lspconfig").eslint.setup({
+vim.lsp.config("eslint", {
   on_attach = on_attach,
 })
+vim.lsp.enable("eslint")

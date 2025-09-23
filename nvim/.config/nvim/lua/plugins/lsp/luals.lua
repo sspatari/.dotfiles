@@ -11,7 +11,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 -- cmd to the absolute path ($HOME and ~ are not expanded) of your unzipped and compiled lua-language-server.
 -- https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#sumneko_lua
 
-require("lspconfig").lua_ls.setup({
+vim.lsp.config("lua_ls", {
   on_attach = on_attach,
   settings = {
     Lua = {
@@ -42,3 +42,4 @@ require("lspconfig").lua_ls.setup({
     },
   },
 })
+vim.lsp.enable("lua_ls")

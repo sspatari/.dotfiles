@@ -1,8 +1,3 @@
-local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
-if not lspconfig_status_ok then
-  return
-end
-
 local on_attach = function(client)
   client.server_capabilities.documentFormattingProvider = false
   client.server_capabilities.documentRangeFormattingProvider = false
@@ -37,7 +32,7 @@ local function filterReactDTS(value)
   return string.match(value.targetUri or value.uri, "react/index.d.ts") == nil
 end
 
-lspconfig.ts_ls.setup({
+vim.lsp.config("ts_ls", {
   on_attach = on_attach,
   -- other options
   handlers = {
@@ -51,3 +46,4 @@ lspconfig.ts_ls.setup({
     end,
   },
 })
+vim.lsp.enable("ts_ls")

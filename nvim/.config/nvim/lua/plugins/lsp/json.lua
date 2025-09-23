@@ -167,7 +167,7 @@ local schemas = {
   },
 }
 
-require("lspconfig").jsonls.setup({
+vim.lsp.config("jsonls", {
   capabilities = capabilities,
   settings = {
     json = {
@@ -175,3 +175,4 @@ require("lspconfig").jsonls.setup({
     },
   },
 })
+vim.lsp.enable("jsonls")

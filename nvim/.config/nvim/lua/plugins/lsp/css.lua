@@ -11,7 +11,7 @@ if is_tailwind == 1 then
   css_settings.lint.unknownAtRules = "ignore"
 end
 
-require("lspconfig").cssls.setup({
+vim.lsp.config("cssls", {
   capabilities = capabilities,
   cmd = { "vscode-css-language-server", "--stdio" },
   filetypes = { "css", "scss", "less" },
@@ -25,3 +25,4 @@ require("lspconfig").cssls.setup({
     },
   },
 })
+vim.lsp.enable("cssls")
