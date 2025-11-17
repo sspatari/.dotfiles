@@ -162,7 +162,7 @@ export PATH=${JAVA_HOME}/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 
 # Anaconda
-export PATH=/usr/local/anaconda3/bin:$PATH
+export PATH=$PATH:/usr/local/anaconda3/bin
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
