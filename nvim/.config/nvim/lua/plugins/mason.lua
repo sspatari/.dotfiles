@@ -10,7 +10,15 @@ return {
       return
     end
 
-    mason.setup()
+    mason.setup({
+      registries = {
+        "github:mason-org/mason-registry",
+        "github:Crashdummyy/mason-registry",
+      },
+      ensure_installed = {
+        "roslyn"
+      },
+    })
     mason_lspconfig.setup({
       ensure_installed = {
         "eslint",
@@ -23,7 +31,7 @@ return {
         "rust_analyzer",
         "tailwindcss",
         "ts_ls",
-        "yamlls",
+        "yamlls"
       },
     })
   end,
