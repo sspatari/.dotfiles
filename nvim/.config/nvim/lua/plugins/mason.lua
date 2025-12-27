@@ -10,15 +10,7 @@ return {
       return
     end
 
-    mason.setup({
-      registries = {
-        "github:mason-org/mason-registry",
-        "github:Crashdummyy/mason-registry",
-      },
-      ensure_installed = {
-        "roslyn"
-      },
-    })
+    mason.setup({})
     mason_lspconfig.setup({
       ensure_installed = {
         "eslint",

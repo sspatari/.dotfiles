@@ -26,12 +26,10 @@ return {
   -- Highlight the word under the cursor
   "RRethy/vim-illuminate",
   {
-    "seblyng/roslyn.nvim",
-    ---@module 'roslyn.config'
-    ---@type RoslynNvimConfig
-    ft = { "cs", "razor" },
+    "3rd/image.nvim",
+    build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
     opts = {
-      -- your configuration comes here; leave empty for default settings
-    },
+        processor = "magick_cli",
+    }
   }
 }
