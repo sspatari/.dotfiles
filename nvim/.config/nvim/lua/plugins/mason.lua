@@ -23,7 +23,8 @@ return {
         "rust_analyzer",
         "tailwindcss",
         "ts_ls",
-        "yamlls"
+        "yamlls",
+        "cssls"
       },
     })
   end,
