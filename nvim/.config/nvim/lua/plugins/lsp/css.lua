@@ -3,13 +3,10 @@ capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 local css_settings = {
   validate = true,
-  lint = {},
+  lint = {
+    unknownAtRules = "ignore",
+  },
 }
-
-local is_tailwind = vim.fn.filereadable("tailwind.config.js")
-if is_tailwind == 1 then
-  css_settings.lint.unknownAtRules = "ignore"
-end
 
 vim.lsp.config("cssls", {
   capabilities = capabilities,
