@@ -19,14 +19,6 @@ return {
     require("plugins.lsp.taplo")
 
     -- Customization and appearance -----------------------------------------
-    -- change gutter diagnostic symbols
-    local signs = { Error = " ", Warning = " ", Hint = " ", Information = " " }
-
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-    end
-
     vim.diagnostic.config({
       virtual_text = {
         source = "if_many",
@@ -34,6 +26,21 @@ return {
       },
       float = {
         source = true,
+      },
+      -- customize signs for diagnostics in the gutter
+         signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = " ",
+          [vim.diagnostic.severity.WARN] = " ",
+          [vim.diagnostic.severity.INFO] = " ",
+          [vim.diagnostic.severity.HINT] = " ",
+        },
+        numhl = {
+          [vim.diagnostic.severity.ERROR] = "DiagnosticSignError",
+          [vim.diagnostic.severity.WARN] = "DiagnosticSignWarn",
+          [vim.diagnostic.severity.INFO] = "DiagnosticSignInfo",
+          [vim.diagnostic.severity.HINT] = "DiagnosticSignHint",
+        },
       },
     })
   end,
