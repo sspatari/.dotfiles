@@ -12,6 +12,30 @@ local function go_organize_imports(wait_ms)
   end
 end
 
+-- Go projects often have a local bin directory for project-specific tools. This autocommand adds that directory to the PATH when editing Go files.
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "go",
+  callback = function()
+    -- Find go.mod upwards from the current file
+    local buf_dir = vim.fn.expand("%:p:h")
+    local gomod = vim.fn.findfile("go.mod", buf_dir .. ";")
+    if gomod == "" then
+      return
+    end
+
+    local root = vim.fn.fnamemodify(gomod, ":h")
+    local local_bin = root .. "/.bin"
+
+    if vim.fn.isdirectory(local_bin) == 1 then
+      -- avoid duplicates
+      if not string.find(vim.env.PATH, local_bin, 1, true) then
+        vim.env.PATH = local_bin .. ":" .. vim.env.PATH
+      end
+    end
+  end,
+})
+
+
 vim.api.nvim_create_user_command("Format", function()
   vim.lsp.buf.format({ async = true })
 end, {})
