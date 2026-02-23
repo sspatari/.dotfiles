@@ -133,12 +133,11 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Posibly deprecated after installing with Homebrew, but leaving it here just in
-# # Golang
-# export GOPATH=$HOME/go # don't forget to change your path correctly!
-# export GOROOT=/usr/local/opt/go/libexec
-# export PATH=$PATH:$GOPATH/bin
-# export PATH=$PATH:$GOROOT/bin
+# Golang
+# Where Go installs binaries from 'go install'
+export GOPATH=$HOME/go
+# Add Go binaries to PATH so you can run installed tools
+export PATH=$PATH:$GOPATH/bin
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
